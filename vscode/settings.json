@@ -1,0 +1,475 @@
+{
+  "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+  // "editor.fontFamily": "Fira Code,Fira Mono, Menlo, Monaco, 'Courier New', monospace",
+  // "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Jetbrains Mono",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  //   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontFamily": "JetbrainsMono Nerd Font",
+  "terminal.integrated.fontSize": 14,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.enabled": false,
+  "gitlens.changes.locations": ["overview", "gutter", "line"],
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  //   "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 8,
+  "terminal.integrated.cursorBlinking": false,
+  "editor.cursorBlinking": "solid",
+
+  "vim.easymotion": true,
+  "vim.easymotionDimBackground": false,
+  "vim.easymotionMarkerBackgroundColor": "#0096FF",
+  "vim.easymotionMarkerForegroundColorOneChar": "#FFF",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#FFF",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#FFF",
+
+  "vim.replaceWithRegister": true,
+  "vim.smartRelativeLine": true,
+  "vim.foldfix": true,
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.leader": "space",
+  "vim.searchMatchTextColor": "white",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  //   "extensions.ignoreRecommendations": true,
+  "vim.hlsearch": true,
+  // "vim.foldfix": true, // Error with $
+
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 100,
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.textColor": "white",
+
+  // Until activation when pressing f/F
+  // "vimFindHighlight.charPrimaryColor": "#4c964e",
+  // "vimFindHighlight.charSecondaryColor": "#0000000",
+  // "vimFindHighlight.charFontWeight": "400",
+  // "vimFindHighlight.enableUnderline": false,
+
+  "vim.handleKeys": {
+    // "<C-j>": false,
+    // "<C-k>": false,
+    "<C-p>": false,
+    "<C-f>": false,
+    "<C-d>": false,
+    "<C-w>": false,
+    "<C-b>": false
+    // "<C-d>": false,
+    // "<C-u>": false
+  },
+
+  // c-g = info position
+  // {Num} G = go line
+  // gd = definition
+  // vi/va = in out
+  // '/char\c' = all matches
+  // insert = c-w,u,h
+  // o = visual mode
+  "vim.insertModeKeyBindings": [
+    // {
+    //   "before": ["j", "j"],
+    //   "after": ["<Esc>"]
+    // }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // {
+    //   "before": ["<C-u>"],
+    //   "commands": ["cursorUp"]
+    // },
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "w"], "commands": [":split"] },
+
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    {
+      "before": ["<C-a>"],
+      "after": ["g", "g", "V", "G"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["[", "{"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["]", "}"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["germanScroll.bertholdUp"],
+      "after": ["M"]
+    },
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["germanScroll.bertholdDown"],
+      "after": ["M"]
+    },
+    {
+      "before": ["leader", "/"],
+      "commands": [":noh"]
+    },
+    // {
+    //   "before": ["<C-d>"],
+    //   "after": ["2", "0", "j"]
+    // },
+    // {
+    //   "before": ["<C-u>"],
+    //   "after": ["2", "0", "k"]
+    // },
+    // {
+    //   "before": ["leader", "leader"],
+    //   "commands": ["editor.action.triggerSuggest"]
+    // },
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["U"],
+      "commands": ["redo"]
+    },
+
+    {
+      "before": ["leader", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+
+    {
+      "before": ["leader", "leader", "j"],
+      "after": ["J"]
+    },
+    {
+      "after": ["^"],
+      "before": ["H"]
+    },
+    {
+      "after": ["$"],
+      "before": ["L"]
+    },
+    {
+      "after": ["%"],
+      "before": ["leader", "m"]
+    },
+
+    // KEEP (like this) or REMAP
+    // {
+    //   "before": ["K"],
+    //   "after": ["M", "c-u"]
+    // },
+    // {
+    //   "before": ["J"],
+    //   "after": ["M", "c-d"]
+    // },
+
+    // MACROS - Learn more
+    // Remember to use j and _ at the end to restart
+    // {
+    //   "before": ["Q"],
+    //   "after": ["@", "@"]
+    // },
+
+    // FIND MOTION
+    // {
+    //   "before": ["s"],
+    //   "commands": ["findThenJump.initiate"]
+    // },
+    // {
+    //   "before": ["S"],
+    //   "commands": ["findThenJump.initiateWithSelection"]
+    // },
+
+    // NAVIGATION
+    // Always 1st line jumps 1page
+    // Better "zz" but laggy
+    // {
+    //   "before": ["c-d"],
+    //   "after": ["M", "c-d"]
+    // },
+    // {
+    //   "before": ["c-u"],
+    //   "after": ["M", "c-u"]
+    // },
+
+    // TOGGLE
+    {
+      "before": ["leader", "i"],
+      "commands": ["extension.toggleBool"]
+    },
+
+    // ERRORS
+    // Remove the msg f8 popup
+    {
+      "before": ["leader", "q"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["leader", "-"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["leader", "leader", "-"],
+      "commands": ["editor.action.marker.prev"]
+    },
+
+    // GIT CHANGES
+    {
+      "before": ["leader", "["],
+      "commands": ["editor.action.dirtydiff.next"]
+    },
+    {
+      "before": ["leader", "leader", "["],
+      "commands": ["editor.action.dirtydiff.previous"]
+    },
+    {
+      "before": ["leader", "tab"],
+      "commands": ["git.openChange"]
+    },
+
+    //FIND IT FASTER
+    // {
+    //   "before": ["leader", "f"],
+    //   "commands": ["find-it-faster.findFiles"]
+    // },
+    // {
+    //   "before": ["leader", "w"],
+    //   "commands": ["find-it-faster.findWithinFiles"]
+    // },
+    // {
+    //   "before": ["leader", "o"],
+    //   "commands": ["find-it-faster.resumeSearch"]
+    // },
+    // {
+    //   "before": ["leader", "t"],
+    //   "commands": ["find-it-faster.findWithinFilesWithType"]
+    // },
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["editor.action.commentLine"],
+      "when": "editorTextFocus && !editorReadonly"
+    },
+
+    {
+      "before": ["g", "p", "d"],
+      "commands": ["editor.action.peekDefinition"]
+    },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "p", "i"],
+      "commands": ["editor.action.peekImplementation"]
+    },
+    {
+      "before": ["g", "R"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    {
+      "before": ["g", "t"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    {
+      "before": ["g", "p", "t"],
+      "commands": ["editor.action.peekTypeDefinition"]
+    }
+  ],
+
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["editor.action.commentLine"],
+      "when": "editorTextFocus && !editorReadonly"
+    }
+    // {
+    //   "before": ["<leader>", "<leader>"],
+    //   "after": ["<Esc>"]
+    // }
+  ],
+
+  "window.titleBarStyle": "native",
+
+  "apc.menubar.compact": true,
+  "apc.activityBar": {
+    "position": "bottom",
+    "hideSettings": true,
+    "size": 22
+  },
+
+  "apc.electron": {
+    "titleBarStyle": "hidden",
+    "frame": false,
+    "titleBarOverlay": {
+      "color": "#052529",
+      "symbolColor": "#fff",
+      "height": 32
+    }
+  },
+  "apc.listRow": {
+    "height": 22
+  },
+  "apc.statusBar": {
+    "position": "editor-bottom",
+    "height": 22,
+    "fontSize": 10
+  },
+
+  "apc.font.family": "Jetbrains Mono",
+  "apc.monospace.font.family": "Jetbrains Mono",
+
+  "apc.stylesheet": {
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- INSERT \"]": {
+      "background-color": "#FFEC71 !important",
+      "color": "#000 !important"
+    },
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL \"]": {
+      "background-color": "#A8E170 !important",
+      "color": "#000 !important"
+    },
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- EASYMOTION \"]": {
+      "background-color": "#0096FF !important",
+      "color": "#000 !important"
+    },
+    "#vscodevim\\.vim\\.primary[aria-label=\"-- SURROUND INPUT --\"]": {
+      "background-color": "#F46872 !important",
+      "color": "#000 !important"
+    },
+    "#vscodevim\\.vim\\.primary[aria-label=\"-- VIM: DISABLED --\"]": {
+      "background-color": "#F46872 !important",
+      "color": "#000 !important"
+    },
+    "#vscodevim\\.vim\\.primary[aria-label=\"-- REPLACE --\"]": {
+      "background-color": "#7F7E90 !important",
+      "color": "#000 !important"
+    },
+    "#vscodevim\\.vim\\.primary[aria-label^=\":\"]": {
+      "background-color": "#A6A4F3 !important",
+      "color": "#000 !important"
+    },
+    "#vscodevim\\.vim\\.primary[aria-label^=\"/\"], #vscodevim\\.vim\\.primary[aria-label^=\"match\"]": {
+      "background-color": "#E0FFFF !important",
+      "color": "#000 !important"
+    }
+  },
+
+  "editor.accessibilitySupport": "off",
+  "typescript.disableAutomaticTypeAcquisition": true,
+  //   "workbench.settings.editor": "json",
+  "explorer.compactFolders": false,
+  "workbench.startupEditor": "none",
+  "files.autoSaveDelay": 5000,
+  "editor.stickyScroll.enabled": true,
+  "prettier.singleQuote": true,
+  "editor.detectIndentation": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+  //   "workbench.activityBar.location": "hidden",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.iconTheme": "vs-seti",
+  //   "vsicons.hideFolders": true
+  "errorLens.fontStyleItalic": true,
+  "workbench.editor.editorActionsLocation": "titleBar",
+  //   "update.mode": "none",
+
+  "window.zoomLevel": -0.5,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    }
+  },
+  "editor.linkedEditing": true,
+  "editor.suggest.insertMode": "replace",
+
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+
+  "editor.cursorStyle": "block",
+  "gitlens.telemetry.enabled": false,
+  "window.customTitleBarVisibility": "never",
+  "github.copilot.editor.enableAutoCompletions": true,
+  "editor.lightbulb.enabled": "off",
+  "files.autoSave": "afterDelay",
+  "update.mode": "manual",
+  "github.copilot.preferredAccount": "LeandroParrish",
+  "gitlens.codeLens.enabled": false
+}
