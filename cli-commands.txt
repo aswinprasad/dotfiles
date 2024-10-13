@@ -1,0 +1,6 @@
+// use private key for cloning repo
+// decode the key using
+// https://www.base64decode.org/
+key=Z2hwX2w3SGM5UmZ3Z1NUVkd1WVhlOXhlbFpmS01lcVRnNjNuN2Zsbg==  
+repo=github.com/aswinprasad/UniSouk.git
+git clone https://aswinprasad99:{key}@{repo}
