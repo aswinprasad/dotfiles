@@ -1,0 +1,23 @@
+Explain the Virtual DOM and how it works in React.
+
+What is React's reconciliation algorithm?
+
+How do you optimize performance in a React application?
+
+Have you used any state management libraries like Redux or MobX? How do they work?
+
+What are the pros and cons of using Redux?
+
+Can you explain how useReducer works? When would you use it over useState?
+
+How do you handle routing in a React application?
+
+How do you implement code splitting in React?
+
+What is SSR (Server-Side Rendering)? Why would you use it?
+
+
+TASK:
+useResizeWindow custom hook
+
+

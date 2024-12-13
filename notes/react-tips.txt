@@ -1,0 +1,141 @@
+SENDING MULTIPLE PROPS
+
+
+If the name and key values are the same you can use spread syntax
+
+Example
+
+<PanelEntity { ...{ panelData, setGetEntity, getEntity} } />
+
+Same as doing this
+
+<PanelEntity 
+      panelData={panelData} 
+      setGetEntity={setGetEntity} 
+      getEntity={getEntity} />
+
+
+CALLING MULTIPLE APIS AT ONCE (SYNCHRONOUS/PARALLEL)
+
+
+  useEffect(() => {
+    const dataFetch = async () => {
+      // waiting for allthethings in parallel
+      const result = (
+        await Promise.allSettled([
+          fetch(sidebarUrl),
+          fetch(issueUrl),
+          fetch(commentsUrl)
+        ])
+      ).map((r) => r.json());
+
+      // and waiting a bit more - fetch API is cumbersome
+      const [sidebarResult, issueResult, commentsResult] = await Promise.allSettled(
+        result
+      );
+
+      // when the data is ready, save it to state
+      setSidebar(sidebarResult);
+      setIssue(issueResult);
+      setComments(commentsResult);
+    };
+
+    dataFetch();
+  }, []);
+
+
+CALLING API (ASYNCHRONOUS)
+
+
+useEffect(() => {
+    try {
+      const dataFetch = async () => {
+        const data = await (
+          await fetch(
+            "https://run.mocky.io/v3/b3bcb9d2-d8e9-43c5-bfb7-0062c85be6f9"
+          )
+        ).json();
+
+        // set state when the data received
+        setState(data);
+      };
+    } catch (err) {
+        console.log(err)
+    } finally {
+	setLoader(false)
+    }
+    
+
+    dataFetch();
+  }, []);
+
+
+MEMOIZING A FUNCTION
+ 
+
+Suppose the Form component is wrapped in memo,
+
+export default function Page({ productId, referrer }) {
+  const handleSubmit = useCallback((orderDetails) => {
+    post('/product/' + productId + '/buy', {
+      referrer,
+      orderDetails
+    });
+  }, [productId, referrer]);
+
+  return <Form onSubmit={handleSubmit} />;
+}
+
+
+DEEP COMPARISON WHILE PASSING NON-PRIMITIVE PROPS TO A MEMOIZED COMPONENT
+
+//child
+import React, { memo } from "react";
+import { isEqual } from "lodash";
+
+const MyComponent = props => {
+ // component logic and rendering 
+};
+
+export default memo(MyComponent, isEqual);
+
+
+//parent
+const App = () => {
+  const ids = [1, 2, 3];
+
+  return (
+    <MyComponent ids={ids} />
+  );
+};
+
+
+CHANGING ARRAY OF OBJECTS INPUT STATE
+
+
+const [itemValues, setItemValues] = useState([
+	{value:'', id:'1'},
+	{value:'', id:'2'},
+	{value:'', id:'3'},
+])
+
+const changeValue = (id, value) => {
+	setItemValues(prevItems => prevItems.map(item=> {
+		if (item.id === id) {
+			item.value = value;
+		}
+		return item;
+	}))
+}
+
+return (
+	{
+		itemValues.map(itemValue=> 
+			<Item key={itemValue.id} id={itemValue.id} value={itemValue.value} onChange={changeValue}
+		)
+	}
+)
+
+//in Item Component
+
+<input onChange={e=> onChange(id, e.target.value)} value={value} />
