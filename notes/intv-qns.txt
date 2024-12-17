@@ -4,6 +4,12 @@ What is React's reconciliation algorithm?
 
 How do you optimize performance in a React application?
 
+how do browsers read jsx?
+
+how to perform automatic redirect after login
+
+falsy values
+
 Have you used any state management libraries like Redux or MobX? How do they work?
 
 What are the pros and cons of using Redux?
@@ -20,4 +26,49 @@ What is SSR (Server-Side Rendering)? Why would you use it?
 TASK:
 useResizeWindow custom hook
 
+function delay(ms) {
+    // your code
+    // return new Promise(resolve => setTimeout(resolve, ms));
+}
 
+delay(3000).then(() => alert('runs after 3 seconds'));
+
+
+primitive vs non-primitive data types
+
+— primitive - immutable
+
+let name = "Rizwan";
+
+console.log(name); // Rizwan
+
+
+name[0] = "r";
+
+console.log(name); // Rizwan
+
+
+name = name[0].toUpperCase() + name.slice(1); // Correct
+
+
+— primitive - can reassign
+
+
+let name = "Rizwan";
+
+console.log(name); // Rizwan
+
+
+name = "rizwan ashiq";
+
+console.log(name); // rizwan ashiq
+
+
+— non primitive - not same since diff memory location
+
+const persons = ["Rizwan", "Ashiq"];
+
+const persons2 = ["Rizwan", "Ashiq"];
+
+
+persons === persons2; // false
