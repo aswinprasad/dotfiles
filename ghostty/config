@@ -1,0 +1,11 @@
+# escape
+keybind = cmd+a=text:\x1Ba
+# match parens
+keybind = cmd+;=text:\x1B;
+# save
+keybind = cmd+s=text:\x13
+# move up/down lines
+keybind = cmd+J=text:\x1BJ
+keybind = cmd+j=text:\x1Bj
+keybind = cmd+K=text:\x1BK
+keybind = cmd+k=text:\x1Bk
