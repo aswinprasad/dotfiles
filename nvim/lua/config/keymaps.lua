@@ -5,6 +5,9 @@
 -- Silent keymap option
 local opts = { silent = true }
 
+-- Escape insert mode with jk
+vim.keymap.set({ "n", "v", "i" }, "<A-a>", "<ESC>", { noremap = true })
+
 -- Select all
 vim.keymap.set({ "n", "v" }, "<C-a>", "ggVG", { noremap = true })
 
@@ -22,9 +25,6 @@ vim.keymap.set("v", "p", '"_dP', { noremap = true })
 
 -- Don't yank newline when using $
 vim.keymap.set("v", "$", "g_", { noremap = true })
-
--- Escape insert mode with jk
-vim.keymap.set({ "n", "v", "i" }, "<A-a>", "<ESC>", { noremap = true })
 
 -- Move to the beginning of the line
 vim.keymap.set({ "n", "v" }, "H", "^", { noremap = true })
@@ -96,23 +96,23 @@ vim.keymap.set(
   "n",
   "<leader>/",
   "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
-  { noremap = true, desc = "Redraw / Clear hlsearch / Diff Update" }
+  { remap = true, desc = "Redraw / Clear hlsearch / Diff Update" }
 )
 
 -- Save without format
 vim.keymap.set({ "n", "x", "s" }, "<leader>s", "<cmd>noa w<CR>", { noremap = true, desc = "Save without format" })
 
 -- Search current buffer
-local function find_in_current_buffer()
-  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-    winblend = 10,
-    previewer = true,
-  }))
-end
-
-vim.keymap.set("n", "<C-f>", function()
-  find_in_current_buffer()
-end, { desc = "Find in Current Buffer" })
+-- local function find_in_current_buffer()
+--   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+--     winblend = 10,
+--     previewer = true,
+--   }))
+-- end
+--
+-- vim.keymap.set("n", "<C-f>", function()
+--   find_in_current_buffer()
+-- end, { desc = "Find in Current Buffer" })
 
 -- Lspsaga
 -- LSP finder - Find the symbol's definition
@@ -206,3 +206,17 @@ vim.keymap.set("i", "<C-S-CR>", "<CR><esc>kA", { noremap = true, silent = true }
 
 -- Enalble c-v for paste in command mode
 vim.keymap.set("c", "<C-v>", "<C-r>+")
+
+-- Remap find files
+vim.keymap.set("n", "<C-p>", LazyVim.pick("files"), { noremap = true, desc = "Find Files (Root Dir)" })
+
+-- Switch buffers
+vim.keymap.set(
+  "n",
+  "<Tab>",
+  "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>",
+  { noremap = true, desc = "Find Files (Root Dir)" }
+)
+
+-- Grep search
+vim.keymap.set("n", "<C-S-f>", LazyVim.pick("live_grep"), { noremap = true, desc = "Grep (Root Dir)" })

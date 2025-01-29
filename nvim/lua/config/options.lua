@@ -19,3 +19,5 @@ vim.g.lazyvim_brightness = 10
 
 -- Ensure termguicolors is enabled if not already
 vim.opt.termguicolors = true
+
+vim.g.snacks_animate = false

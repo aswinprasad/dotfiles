@@ -1,5 +1,5 @@
 {
-  "name": "snippets",
+  "name": "personal-snippets",
   "contributes": {
     "snippets": [
       {
@@ -9,7 +9,7 @@
           "typescript",
           "typescriptreact"
         ],
-        "path": "snippets/javascript.json"
+        "path": "./javascript.json"
       }
     ]
   }

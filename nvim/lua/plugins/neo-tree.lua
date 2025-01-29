@@ -25,15 +25,23 @@ return {
       system_open = function(state)
         local node = state.tree:get_node()
         local path = node:get_id()
-        -- Windows: Without removing the file from the path, it opens in code.exe instead of explorer.exe
-        local p
-        local lastSlashIndex = path:match("^.+()\\[^\\]*$") -- Match the last slash and everything before it
-        if lastSlashIndex then
-          p = path:sub(1, lastSlashIndex - 1) -- Extract substring before the last slash
+
+        -- Check OS type
+        local os_name = vim.loop.os_uname().sysname
+
+        if os_name == "Windows_NT" then
+          -- Windows specific handling
+          local lastSlashIndex = path:match("^.+()\\[^\\]*$")
+          local p = lastSlashIndex and path:sub(1, lastSlashIndex - 1) or path
+          vim.cmd("silent !start explorer " .. p)
+        elseif os_name == "Darwin" then
+          -- macOS handling
+          local parent_path = vim.fn.fnamemodify(path, ":h")
+          vim.fn.jobstart({ "open", parent_path }, { detach = true })
         else
-          p = path -- If no slash found, return original path
+          -- Linux/Unix handling (optional)
+          vim.fn.jobstart({ "xdg-open", path }, { detach = true })
         end
-        vim.cmd("silent !start explorer " .. p)
       end,
     },
   },
