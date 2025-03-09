@@ -13,6 +13,7 @@ end
 
 return {
   "monaqa/dial.nvim",
+  lazy = false,
   keys = {
     {
       "<A-=>",

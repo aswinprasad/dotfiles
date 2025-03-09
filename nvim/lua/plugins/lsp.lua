@@ -20,6 +20,7 @@ return {
         ts_ls = {
           enabled = false,
         },
+        oxlint = {},
         vtsls = {
           -- explicitly add default filetypes, so that we can extend
           -- them in related extras

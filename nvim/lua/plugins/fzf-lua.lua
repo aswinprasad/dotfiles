@@ -2,6 +2,7 @@ return {
   "ibhagwan/fzf-lua",
   keys = {
     { "<leader>/", false },
+    { "<C-i>", false },
   },
   opts = {
     keymap = {
