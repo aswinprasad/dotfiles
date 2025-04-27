@@ -21,3 +21,5 @@ vim.g.lazyvim_brightness = 10
 vim.opt.termguicolors = true
 
 vim.g.snacks_animate = false
+
+vim.g.ai_cmp = false

@@ -220,3 +220,20 @@ vim.keymap.set(
 
 -- Grep search
 vim.keymap.set("n", "<C-S-f>", LazyVim.pick("live_grep"), { noremap = true, desc = "Grep (Root Dir)" })
+-- fzf search
+vim.keymap.set("v", "<C-f>", function()
+  local text = vim.getVisualSelection()
+  require("fzf-lua").grep_curbuf({ search = text })
+end, { desc = "Search buffer with exact visual selection" })
+
+vim.keymap.set("n", "<C-f>", function()
+  require("fzf-lua").grep_curbuf()
+end, { desc = "Search buffer" })
+
+function vim.getVisualSelection()
+  vim.cmd('noau normal! "vy"')
+  local text = vim.fn.getreg("v")
+  vim.fn.setreg("v", {})
+  text = string.gsub(text, "\n", "")
+  return text
+end
