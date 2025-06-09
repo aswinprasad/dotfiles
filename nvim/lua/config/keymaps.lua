@@ -153,10 +153,15 @@ vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 vim.keymap.set("n", "gh", "<cmd>Lspsaga hover_doc<CR>")
 
 -- Substitute
-vim.keymap.set("n", "gr", require("substitute").operator, { noremap = true, desc = "Substitute" })
-vim.keymap.set("n", "grr", require("substitute").line, { noremap = true, desc = "Substitute line" })
-vim.keymap.set("n", "grS", require("substitute").eol, { noremap = true, desc = "Substitute to end of line" })
-vim.keymap.set("x", "gr", require("substitute").visual, { noremap = true, desc = "Substitute visual" })
+-- vim.keymap.set("n", "gr", require("substitute").operator, { noremap = true, desc = "Substitute" })
+-- vim.keymap.set("n", "grr", require("substitute").line, { noremap = true, desc = "Substitute line" })
+-- vim.keymap.set("n", "grS", require("substitute").eol, { noremap = true, desc = "Substitute to end of line" })
+-- vim.keymap.set("x", "gr", require("substitute").visual, { noremap = true, desc = "Substitute visual" })
+
+-- Unmap lsp default keymaps
+vim.keymap.del("n", "gra")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grn")
 
 -- remap % to ctrl m for matching pairs like (), [], {} and html tags
 vim.keymap.set("n", "<C-m>", "%", { noremap = true, desc = "Match pairs" })
