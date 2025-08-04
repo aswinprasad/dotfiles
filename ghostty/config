@@ -1,3 +1,6 @@
+# theme
+# theme = onedarkpro_onedark
+
 # escape
 keybind = cmd+a=text:\x1Ba
 # match parens
@@ -9,3 +12,19 @@ keybind = cmd+J=text:\x1BJ
 keybind = cmd+j=text:\x1Bj
 keybind = cmd+K=text:\x1BK
 keybind = cmd+k=text:\x1Bk
+# ctrl + i fix
+keybind = ctrl+i=text:\x1B[73;5u
+# find prev/next bracket
+keybind = alt+shift+j=text:\x1B[74;3u
+keybind = alt+shift+k=text:\x1B[75;3u
+# dial
+keybind = alt+minus=text:\x1B-
+keybind = alt+equal=text:\x1B=
+# copilot bindings
+keybind = alt+[=text:\x1B[
+keybind = alt+]=text:\x1B]
+keybind = ctrl+l=text:\x1B[108;5u
+keybind = ctrl+]=text:\x1B[93;5u
+
+# background-opacity = 0.8
+# background-blur = 20
