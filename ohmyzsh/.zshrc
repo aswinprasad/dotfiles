@@ -101,4 +101,16 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ui="cd /Users/aswinprasad/Documents/GitHub/rainbow-ui"
+alias ds="cd /Users/aswinprasad/Documents/GitHub/aereo-design-system"
+alias api="cd /Users/aswinprasad/Documents/GitHub/rainbow-api-engine"
+alias ces="cd /Users/aswinprasad/Documents/GitHub/aereo-cesium"
+alias gis="cd /Users/aswinprasad/Documents/GitHub/gis-development"
+
+alias dev="npm run dev"
+alias lint="npm run lint"
+alias i="npm i"
+alias storybook="npm run storybook"
+alias pull='git pull origin'
+alias build="npm run build"
+alias rnode="rm -rf node_modules/"
