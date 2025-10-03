@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.surround",
+  "nvim-mini/mini.surround",
   -- it should load on initialization
   opts = {
     mappings = {

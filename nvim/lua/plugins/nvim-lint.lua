@@ -14,6 +14,7 @@ return {
       typescript = { "oxlint" },
       javascriptreact = { "oxlint" },
       typescriptreact = { "oxlint" },
+      python = { "pylint" },
     },
     -- LazyVim extension to easily override linter options
     -- or add custom linters.
