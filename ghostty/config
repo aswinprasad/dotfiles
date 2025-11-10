@@ -19,12 +19,16 @@ keybind = alt+shift+j=text:\x1B[74;3u
 keybind = alt+shift+k=text:\x1B[75;3u
 # dial
 keybind = alt+minus=text:\x1B-
-keybind = alt+equal=text:\x1B=
+# keybind = alt+plus=text:\x1B=
+# keybind = alt+shift+equal=text:\x1B=
 # copilot bindings
 keybind = alt+[=text:\x1B[
 keybind = alt+]=text:\x1B]
 keybind = ctrl+l=text:\x1B[108;5u
 keybind = ctrl+]=text:\x1B[93;5u
 
+background-image = ./cat.png
+background-image-fit = cover
+background-image-opacity = 0.14
 # background-opacity = 0.8
 # background-blur = 20
